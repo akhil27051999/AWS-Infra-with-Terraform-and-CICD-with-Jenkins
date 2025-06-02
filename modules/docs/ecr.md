@@ -50,7 +50,7 @@ output "repo_url" {
 ### Summary for ECR Module
 - Purpose: To create and manage an Amazon ECR repository for storing your Docker container images.
 
-Key features:
+**Key features:**
 1. The repo is named jenkins-ecr-repo.
 2. Allows mutable image tags (you can overwrite tags).
 3. Prevents accidental destruction of the repo.
