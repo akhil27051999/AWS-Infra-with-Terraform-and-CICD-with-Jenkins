@@ -195,4 +195,3 @@ pipeline {
 - Jenkins running at http://<EC2-Public-IP>:8080
 - CI/CD pipeline triggers on code push to GitHub
 - Docker images built and pushed to ECR
-![image](https://github.com/user-attachments/assets/73cf8f1d-ea68-497b-bd00-e9ae79fb20f9)
