@@ -66,10 +66,11 @@ variable "assume_role_policy" {}
 2. You could parameterize the role name and assume role policy in the future by referencing these variables instead of hardcoding.
 
 ---
-### Summary for IAM Module
-1. Purpose: To create an IAM Role and Instance Profile for EC2 instances to securely access AWS resources.
-**Key components:**
 
+### Summary for IAM Module
+- Purpose: To create an IAM Role and Instance Profile for EC2 instances to securely access AWS resources.
+   
+**Key components:**
 1. IAM Role with trust policy allowing EC2 service to assume the role.
 2. Instance Profile to attach the IAM role to EC2.
 3. Outputs: Expose the role name and instance profile name for integration.
