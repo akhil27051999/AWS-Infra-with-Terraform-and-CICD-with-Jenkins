@@ -15,7 +15,12 @@ output "ec2_instance_id" {
 
 output "ec2_public_ip" {
   description = "The public IP address of the EC2 instance"
-  value       = module.ec2.public_ip
+  value       = module.ec2.instance_public_ip
+}
+
+output "iam_instance_profile" {
+  description = "The IAM instance profile name"
+  value       = module.iam.iam_instance_profile
 }
 
 output "iam_role_name" {

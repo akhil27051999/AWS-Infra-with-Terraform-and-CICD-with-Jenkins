@@ -1,2 +1,3 @@
-# No input variables needed here for now
+variable "role_name" {}
+variable "assume_role_policy" {}
 
