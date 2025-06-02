@@ -62,6 +62,7 @@ value       = module.s3.bucket_name
 ```hcl
 description = "The ECR repository URL"
 value       = module.ecr.repo_url
+```
 
 - Description: Full URL of the Docker image repository.
 - Use Case: Use this in your Jenkins pipeline to push/pull Docker images.
