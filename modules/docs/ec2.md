@@ -19,19 +19,6 @@ resource "aws_instance" "jenkins" {
     Name = "jenkins-server"
   }
 }
-```
-
-1. aws_instance "jenkins": Defines an EC2 instance resource with the label "jenkins".
-2. ami: Amazon Machine Image ID, pulled from the variable ami_id (Ubuntu AMI by default).
-3. instance_type: Instance size/type, from the variable instance_type (default is t2.micro).
-4. subnet_id: The subnet where the EC2 instance will be launched, passed via variable.
-5. key_name: SSH key pair name for logging into the instance.
-6. vpc_security_group_ids: Attaches a security group to the instance; here it refers to a security group resource defined below.
-7. iam_instance_profile: IAM profile attached for permissions, optional with default null.
-8. user_data: Runs a shell script during instance initialization (user_data.sh file in the module directory).
-9. tags: Tags the instance with name "jenkins-server".
-
-```hcl
 
 resource "aws_security_group" "jenkins_sg" {
   name        = "jenkins-sg"
@@ -60,7 +47,17 @@ resource "aws_security_group" "jenkins_sg" {
   }
 }
 ```
-Defines a security group named jenkins-sg allowing inbound and outbound traffic:
+
+1. aws_instance "jenkins": Defines an EC2 instance resource with the label "jenkins".
+2. ami: Amazon Machine Image ID, pulled from the variable ami_id (Ubuntu AMI by default).
+3. instance_type: Instance size/type, from the variable instance_type (default is t2.micro).
+4. subnet_id: The subnet where the EC2 instance will be launched, passed via variable.
+5. key_name: SSH key pair name for logging into the instance.
+6. vpc_security_group_ids: Attaches a security group to the instance; here it refers to a security group resource defined below.
+7. iam_instance_profile: IAM profile attached for permissions, optional with default null.
+8. user_data: Runs a shell script during instance initialization (user_data.sh file in the module directory).
+9. tags: Tags the instance with name "jenkins-server".
+10. Defines a security group named jenkins-sg allowing inbound and outbound traffic:
 
 **Ingress rules:**
 
