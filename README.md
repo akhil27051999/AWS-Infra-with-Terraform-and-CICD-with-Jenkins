@@ -2,7 +2,8 @@
 
 ## 👨‍💻 Project Goal
 
-Provision and automate AWS infrastructure using **Terraform modules**, and deploy a **CI/CD pipeline** using **Jenkins running in Docker** inside an EC2 instance. This project follows Infrastructure as Code (IaC) principles to enable reusable, version-controlled, and fully automated cloud environments.
+Provision and automate AWS infrastructure using **Terraform modules**, and deploy a **CI/CD pipeline** using **Jenkins running in Docker** inside an EC2 instance. 
+This project follows Infrastructure as Code (IaC) principles to enable reusable, version-controlled, and fully automated cloud environments.
 
 ---
 
