@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = "my-app"
+        CONTAINER_NAME = "my-app"
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -11,7 +16,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("my-app")
+                    // Build docker image using Dockerfile in root directory
+                    docker.build("${IMAGE_NAME}", ".")
                 }
             }
         }
@@ -19,7 +25,12 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    sh 'docker run -d -p 5000:5000 --name my-app my-app'
+                    // Stop and remove container if already running
+                    sh "docker stop ${CONTAINER_NAME} || true"
+                    sh "docker rm ${CONTAINER_NAME} || true"
+
+                    // Run container mapping port 5000
+                    sh "docker run -d -p 5000:5000 --name ${CONTAINER_NAME} ${IMAGE_NAME}"
                 }
             }
         }
@@ -28,9 +39,9 @@ pipeline {
     post {
         always {
             script {
-                // Clean up container after build (optional)
-                sh 'docker stop my-app || true'
-                sh 'docker rm my-app || true'
+                // Clean up container after build
+                sh "docker stop ${CONTAINER_NAME} || true"
+                sh "docker rm ${CONTAINER_NAME} || true"
             }
         }
     }
