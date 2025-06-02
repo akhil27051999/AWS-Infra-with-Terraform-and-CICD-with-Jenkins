@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'
+            args '-u root'  // optional: allows writing in workspace
+        }
+    }
 
     environment {
         IMAGE_NAME = "my-app"
@@ -16,37 +21,19 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                script {
-                    // Example: Node.js tests (replace for your app)
-                    sh 'npm install'
-                    sh 'npm test'
-                }
+                sh 'npm install'
+                sh 'npm test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image using BuildKit
                     sh 'export DOCKER_BUILDKIT=1'
                     docker.build("${IMAGE_NAME}", ".")
                 }
             }
         }
-
-        /*
-        stage('Push to AWS ECR') {
-            steps {
-                script {
-                    sh '''
-                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 174350031850.dkr.ecr.us-east-1.amazonaws.com
-                    docker tag ${IMAGE_NAME}:latest 174350031850.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_NAME}:latest
-                    docker push 174350031850.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_NAME}:latest
-                    '''
-                }
-            }
-        }
-        */
 
         stage('Run Container') {
             steps {
@@ -61,11 +48,8 @@ pipeline {
 
     post {
         always {
-            script {
-                // Ensure cleanup of container regardless of build result
-                sh "docker stop ${CONTAINER_NAME} || true"
-                sh "docker rm ${CONTAINER_NAME} || true"
-            }
+            sh "docker stop ${CONTAINER_NAME} || true"
+            sh "docker rm ${CONTAINER_NAME} || true"
         }
     }
 }
