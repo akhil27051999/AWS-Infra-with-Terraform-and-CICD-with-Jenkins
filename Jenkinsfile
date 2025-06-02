@@ -4,6 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "my-app"
         CONTAINER_NAME = "my-app"
+        DOCKER_BUILDKIT = '1'
     }
 
     stages {
@@ -13,23 +14,45 @@ pipeline {
             }
         }
 
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Example: Node.js tests (replace for your app)
+                    sh 'npm install'
+                    sh 'npm test'
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build docker image using Dockerfile in root directory
+                    // Build Docker image using BuildKit
+                    sh 'export DOCKER_BUILDKIT=1'
                     docker.build("${IMAGE_NAME}", ".")
                 }
             }
         }
 
+        /*
+        stage('Push to AWS ECR') {
+            steps {
+                script {
+                    sh '''
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 174350031850.dkr.ecr.us-east-1.amazonaws.com
+                    docker tag ${IMAGE_NAME}:latest 174350031850.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_NAME}:latest
+                    docker push 174350031850.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_NAME}:latest
+                    '''
+                }
+            }
+        }
+        */
+
         stage('Run Container') {
             steps {
                 script {
-                    // Stop and remove container if already running
                     sh "docker stop ${CONTAINER_NAME} || true"
                     sh "docker rm ${CONTAINER_NAME} || true"
-
-                    // Run container mapping port 5000
                     sh "docker run -d -p 5000:5000 --name ${CONTAINER_NAME} ${IMAGE_NAME}"
                 }
             }
@@ -39,7 +62,7 @@ pipeline {
     post {
         always {
             script {
-                // Clean up container after build
+                // Ensure cleanup of container regardless of build result
                 sh "docker stop ${CONTAINER_NAME} || true"
                 sh "docker rm ${CONTAINER_NAME} || true"
             }
