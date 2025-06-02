@@ -1,3 +1,5 @@
+# 🔍 Detailed Explanation of Each Output
+
 ## ✅ output "vpc_id"
 ```hcl
 description = "The ID of the VPC"
