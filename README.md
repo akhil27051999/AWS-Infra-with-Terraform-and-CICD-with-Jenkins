@@ -4,6 +4,8 @@
 
 Provision and automate AWS infrastructure using **Terraform modules**, and deploy a **CI/CD pipeline** using **Jenkins running in Docker** inside an EC2 instance. 
 This project follows Infrastructure as Code (IaC) principles to enable reusable, version-controlled, and fully automated cloud environments.
+![0226-TerraformJenkinsCICD-Waldek_Social](https://github.com/user-attachments/assets/7d11c2c4-3fd5-4358-969e-f69a92bce3d9)
+
 
 ---
 
