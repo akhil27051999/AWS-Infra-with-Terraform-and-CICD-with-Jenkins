@@ -1,12 +1,12 @@
 resource "aws_s3_bucket" "tf_state" {
-  bucket = var.bucket_name
+  bucket = "your-bucket-name"
+}
 
-  versioning {
-    enabled = true
-  }
+resource "aws_s3_bucket_versioning" "tf_state_versioning" {
+  bucket = aws_s3_bucket.tf_state.id
 
-  tags = {
-    Name = "Terraform State Bucket"
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
