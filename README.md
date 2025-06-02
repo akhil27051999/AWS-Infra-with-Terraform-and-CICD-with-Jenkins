@@ -52,9 +52,9 @@ aws configure
 - Enable Programmatic Access
 - Attach policies:
 
-1. AmazonEC2FullAccess
-2. AmazonS3FullAccess
-3. AmazonECRFullAccess
+1. `AmazonEC2FullAccess`
+2. `AmazonS3FullAccess`
+3. `AmazonECRFullAccess`
    
 - Save Access & Secret Keys
 
