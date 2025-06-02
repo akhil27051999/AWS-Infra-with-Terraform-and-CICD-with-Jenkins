@@ -85,6 +85,12 @@ project-root/
 │       ├── main.tf
 │       ├── variables.tf
 │       └── outputs.tf
+├── app/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Jenkinsfile
+
 ```
 
 ---
