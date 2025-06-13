@@ -1,4 +1,4 @@
-# 🔍 Detailed Explanation of Main.TF file
+# 🔍 Detailed Explanation of main.tf file
 
 - This is the orchestrator file that:
 - Sets the AWS provider region.
