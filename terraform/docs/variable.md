@@ -78,6 +78,8 @@ variable "instance_type" {
 - Purpose: Specifies EC2 instance type (CPU, RAM).
 - Default: t2.micro (Free-tier eligible).
 
+---
+
 ### 7. key_name
 
 ```hcl
