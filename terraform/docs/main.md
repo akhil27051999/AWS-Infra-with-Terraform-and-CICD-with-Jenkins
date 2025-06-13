@@ -147,5 +147,5 @@ module "ecr" {
 - vpc → ec2: Subnet ID, VPC ID
 - iam → ec2: IAM profile
 
-This chaining ensures proper order of resource creation.
+*This chaining ensures proper order of resource creation.*
 
