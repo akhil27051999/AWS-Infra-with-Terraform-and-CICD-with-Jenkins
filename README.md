@@ -59,7 +59,7 @@ project-root/
 
 ## 🧱 Project Section-wise Overview
 
-### Section 1: Prerequisites & Setup
+### ✅ Section 1: Prerequisites & Setup
 
 **1.1 Install Terraform**
 ```bash
@@ -97,7 +97,7 @@ aws configure
 - Save Access & Secret Keys
   
 ---
-### Section 2: Terraform Modules Overview
+### ✅ Section 2: Terraform Modules Overview
 
  **2.1 VPC Module**
 - Creates VPC, Subnet, Internet Gateway, Route Table
@@ -124,7 +124,7 @@ aws configure
 - Output: ECR Repository URI
 
 ---
-### Section 3: Terraform Commands
+### ✅ Section 3: Terraform Commands
 ```bash
 terraform init       # Initialize modules and backend
 terraform plan       # Review what changes will be made
@@ -149,7 +149,7 @@ terraform destroy    # Destroy all created resources
 ![Screenshot 2025-06-02 180933](https://github.com/user-attachments/assets/1ec98ef1-87d1-45a3-9e8e-46ec8a34602e)
 
 ---
-### Section 4: Jenkins Installation via user_data
+### ✅ Section 4: Jenkins Installation via user_data
 
 **When the EC2 instance launches, the following script runs automatically:**
 ```bash
@@ -167,7 +167,7 @@ http://<EC2-Public-IP>:8080
 ```
 
 ---
-### Section 5: Jenkins CI/CD Pipeline
+### ✅ Section 5: Jenkins CI/CD Pipeline
 
 **Sample Jenkinsfile**
 ```groovy
@@ -200,12 +200,19 @@ pipeline {
 }
 ```
 
+### ✅ Section 6: Final Output
+
+**CI/CD Outcome:**
+
+- Jenkins running at http://<EC2-Public-IP>:8080
+- CI/CD pipeline triggers on code push to GitHub
+- Docker images built and pushed to ECR
+
 **Jenkins Pipeline Output**
 
 ![Screenshot 2025-06-02 225050](https://github.com/user-attachments/assets/efd214fd-ec79-4f10-8f87-133abcecaaa5)
----
 
-### Section 6: Final Output
+---
 
 **AWS Resources Created:**
 
@@ -214,15 +221,7 @@ pipeline {
 - IAM Role for EC2
 - S3 bucket for storing Terraform state
 - ECR repository for Docker images
-
-**CI/CD Outcome:**
-
-- Jenkins running at http://<EC2-Public-IP>:8080
-- CI/CD pipeline triggers on code push to GitHub
-- Docker images built and pushed to ECR
-
----
-
+  
 ### AWS Resources Outputs
 
 **VPC Output**
