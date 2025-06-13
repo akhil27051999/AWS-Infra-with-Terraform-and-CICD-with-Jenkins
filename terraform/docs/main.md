@@ -134,12 +134,12 @@ module "ecr" {
 
 ## ✅ Overall Flow Summary
 
-`Step 1`: Configure AWS region via provider
-`Step 2`: Create networking (VPC, Subnet, IGW, Route Table)
-`Step 3`: Create IAM role for EC2
-`Step 4`: Launch EC2 in the subnet, with IAM role
-`Step 5`: Reference an existing S3 bucket (optional: enable versioning)
-`Step 6`: Create an ECR repository for Jenkins or app images
+- `Step 1`: Configure AWS region via provider
+- `Step 2`: Create networking (VPC, Subnet, IGW, Route Table)
+- `Step 3`: Create IAM role for EC2
+- `Step 4`: Launch EC2 in the subnet, with IAM role
+- `Step 5`: Reference an existing S3 bucket (optional: enable versioning)
+- `Step 6`: Create an ECR repository for Jenkins or app images
 
 
 ## 🧩 Dependencies (Module Chaining)
