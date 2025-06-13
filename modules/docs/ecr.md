@@ -33,7 +33,7 @@ resource "aws_ecr_repository" "jenkins_repo" {
 ```hcl
 variable "repo_name" {}
 ```
-1. Defines a variable repo_name, but it is currently not used in the main.tf. This means either the repo name is hardcoded or you might plan to parameterize it later. If you want to use it, you could replace name = "jenkins-ecr-repo" with name = var.repo_name in main.tf.
+- Defines a variable repo_name, but it is currently not used in the main.tf. This means either the repo name is hardcoded or you might plan to parameterize it later. If you want to use it, you could replace name = "jenkins-ecr-repo" with name = var.repo_name in main.tf.
 
 ---
 
