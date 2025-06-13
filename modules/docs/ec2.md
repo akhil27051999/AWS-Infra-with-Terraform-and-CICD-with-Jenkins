@@ -1,6 +1,7 @@
 # EC2 Module Explanation
 
-## 1. main.tf
+### 1. main.tf
+
 This file contains the actual AWS resources and their configurations for your EC2 instance.
 
 ```hcl
@@ -48,15 +49,15 @@ resource "aws_security_group" "jenkins_sg" {
 }
 ```
 
-1. aws_instance "jenkins": Defines an EC2 instance resource with the label "jenkins".
-2. ami: Amazon Machine Image ID, pulled from the variable ami_id (Ubuntu AMI by default).
-3. instance_type: Instance size/type, from the variable instance_type (default is t2.micro).
-4. subnet_id: The subnet where the EC2 instance will be launched, passed via variable.
-5. key_name: SSH key pair name for logging into the instance.
-6. vpc_security_group_ids: Attaches a security group to the instance; here it refers to a security group resource defined below.
-7. iam_instance_profile: IAM profile attached for permissions, optional with default null.
-8. user_data: Runs a shell script during instance initialization (user_data.sh file in the module directory).
-9. tags: Tags the instance with name "jenkins-server".
+1. `aws_instance` "jenkins": Defines an EC2 instance resource with the label "jenkins".
+2. `ami`: Amazon Machine Image ID, pulled from the variable ami_id (Ubuntu AMI by default).
+3. `instance_type`: Instance size/type, from the variable instance_type (default is t2.micro).
+4. `subnet_id`: The subnet where the EC2 instance will be launched, passed via variable.
+5. `key_name`: SSH key pair name for logging into the instance.
+6. `vpc_security_group_ids`: Attaches a security group to the instance; here it refers to a security group resource defined below.
+7. `iam_instance_profile`: IAM profile attached for permissions, optional with default null.
+8. `user_data`: Runs a shell script during instance initialization (user_data.sh file in the module directory).
+9. `tags`: Tags the instance with name "jenkins-server".
 10. Defines a security group named jenkins-sg allowing inbound and outbound traffic:
 
 **Ingress rules:**
@@ -70,7 +71,9 @@ resource "aws_security_group" "jenkins_sg" {
 - The security group is attached to the VPC specified by vpc_id variable.
 
 ---
-## 2. outputs.tf
+
+### 2. outputs.tf
+
 These outputs provide key information about the EC2 instance after deployment:
 
 ```hcl
@@ -88,12 +91,15 @@ output "public_dns" {
 }
 
 ```
-1. instance_id: The unique ID of the EC2 instance.
-2. public_ip: The public IPv4 address assigned to the instance.
-3. public_dns: The public DNS name for accessing the instance.
+1. `instance_id`: The unique ID of the EC2 instance.
+2. `public_ip`: The public IPv4 address assigned to the instance.
+3. `public_dns`: The public DNS name for accessing the instance.
 4. These outputs are helpful for connecting to the instance or for referencing it in other modules.
 
-## 3. variables.tf
+---
+
+### 3. variables.tf
+
 Defines all the input variables required by this module along with their types and descriptions:
 
 ```hcl
@@ -131,12 +137,12 @@ variable "iam_instance_profile" {
   default     = null
 }
 ```
-1. ami_id: The AMI ID to use for the instance (default is Ubuntu).
-2. instance_type: The size of the EC2 instance (t2.micro by default).
-3. subnet_id: The subnet where the instance will be launched — mandatory, no default.
-4. key_name: SSH keypair name to access the EC2 instance — mandatory.
-5. vpc_id: VPC ID the instance belongs to — mandatory.
-6. iam_instance_profile: Optional IAM profile to assign to the EC2 instance.
+1. `ami_id`: The AMI ID to use for the instance (default is Ubuntu).
+2. `instance_type`: The size of the EC2 instance (t2.micro by default).
+3. `subnet_id`: The subnet where the instance will be launched — mandatory, no default.
+4. `key_name`: SSH keypair name to access the EC2 instance — mandatory.
+5. `vpc_id`: VPC ID the instance belongs to — mandatory.
+6. `iam_instance_profile`: Optional IAM profile to assign to the EC2 instance.
 ---
 
 ### Summary for EC2 Module
