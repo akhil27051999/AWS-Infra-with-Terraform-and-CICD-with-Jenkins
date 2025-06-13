@@ -1,4 +1,4 @@
-# 🔍 Detailed Explanation of Main file
+# 🔍 Detailed Explanation of Main.TF file
 
 - This is the orchestrator file that:
 - Sets the AWS provider region.
@@ -10,15 +10,18 @@
 ## 🔍 Line-by-Line Breakdown
 
 ### 1. AWS Provider Block
+
 ```hcl
 provider "aws" {
   region = var.aws_region
 }
 ```
+
 1. Configures the AWS provider with a region.
 2. var.aws_region is a variable, likely defined in variables.tf or passed via CLI.
 
 ---
+
 ### 2. VPC Module Call
 ```hcl
 module "vpc" {
@@ -36,11 +39,14 @@ module "vpc" {
 5. In a given availability zone (availability_zone)
 
 ✅ Outputs Used Later:
+
 1. module.vpc.vpc_id
 2. module.vpc.subnet_id
 
 ---
+
 ### 3. IAM Module Call
+
 ```hcl
 
 module "iam" {
@@ -64,6 +70,7 @@ POLICY
 ```
 
 **Calls the IAM module to:**
+
 1. Create an IAM role for EC2 (named jenkins-role)
 2. Provide an assume role policy in JSON format (hardcoded here using heredoc syntax <<POLICY ... POLICY)
 3. This role allows EC2 to assume it via sts:AssumeRole
@@ -73,6 +80,7 @@ POLICY
 1. module.iam.iam_instance_profile
 
 ---
+
 ### 4. EC2 Module Call
 ```hcl
 module "ec2" {
@@ -95,6 +103,7 @@ module "ec2" {
 6. iam_instance_profile: From iam module output for attaching the IAM role
 
 ---
+
 ### 5. S3 Module Call
 ```hcl
 module "s3" {
@@ -108,6 +117,7 @@ module "s3" {
 2. Manage Terraform state or store Jenkins artifacts/logs
    
 ---
+
 ### 6. ECR Module Call
 ```hcl
 module "ecr" {
