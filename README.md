@@ -57,7 +57,7 @@ project-root/
 
 ```
 
-## 🧱 Project Section-wise Overview
+## 🧩 Project Section-wise Overview
 
 ### ✅ Section 1: Prerequisites & Setup
 
