@@ -37,7 +37,7 @@ module "vpc" {
 4. A public subnet (subnet_cidr)
 5. In a given availability zone (availability_zone)
 
-✅ Outputs Used Later:
+**✅ Outputs Used Later:**
 
 1. module.vpc.vpc_id
 2. module.vpc.subnet_id
@@ -74,7 +74,7 @@ POLICY
 2. Provide an assume role policy in JSON format (hardcoded here using heredoc syntax <<POLICY ... POLICY)
 3. This role allows EC2 to assume it via sts:AssumeRole
 
-✅ Output Used Later:
+**✅ Output Used Later:**
 
 1. module.iam.iam_instance_profile
 
