@@ -1,5 +1,4 @@
-# 🔍 Detailed Explanation of Each Output
-
+# 🔍 Detailed Explanation of outputs.tf file
 ### 1. vpc_id
 
 ```hcl
