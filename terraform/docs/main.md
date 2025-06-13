@@ -1,4 +1,4 @@
-# Purpose and detailed explaination of main.tf in the Root Module
+# 🔍 Detailed Explanation of Main file
 
 - This is the orchestrator file that:
 - Sets the AWS provider region.
