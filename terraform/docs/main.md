@@ -94,12 +94,12 @@ module "ec2" {
 ```
 
 **Provisions an EC2 instance with:**
-1. ami_id: AMI to use (e.g., Ubuntu, Amazon Linux)
-2. instance_type: e.g., t2.micro
-3. subnet_id: From vpc module output
-4. key_name: SSH key for access
-5.vpc_id: For security group/routing
-6. iam_instance_profile: From iam module output for attaching the IAM role
+1. `ami_id`: AMI to use (e.g., Ubuntu, Amazon Linux)
+2. `instance_type`: e.g., t2.micro
+3. `subnet_id`: From vpc module output
+4. `key_name`: SSH key for access
+5. `vpc_id`: For security group/routing
+6. `iam_instance_profile`: From iam module output for attaching the IAM role
 
 ---
 
