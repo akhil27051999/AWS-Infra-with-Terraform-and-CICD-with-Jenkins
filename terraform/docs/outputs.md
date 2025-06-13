@@ -1,6 +1,6 @@
 # 🔍 Detailed Explanation of Each Output
 
-### 1. output "vpc_id"
+### 1. vpc_id
 
 ```hcl
 description = "The ID of the VPC"
@@ -12,7 +12,7 @@ value       = module.vpc.vpc_id
 
 ---
 
-### 2. output "subnet_id"
+### 2. subnet_id
 
 ```hcl
 description = "The ID of the subnet"
@@ -24,7 +24,7 @@ value       = module.vpc.subnet_id
 
 ---
 
-### 3. output "ec2_instance_id"
+### 3. ec2_instance_id
 
 ```hcl
 description = "The ID of the EC2 instance"
@@ -36,7 +36,7 @@ value       = module.ec2.instance_id
 
 ---
 
-### 4. output "ec2_public_ip"
+### 4. ec2_public_ip
 
 ```hcl
 description = "The public IP address of the EC2 instance"
@@ -48,7 +48,7 @@ value       = module.ec2.public_ip
 
 ---
 
-### 5. output "iam_instance_profile"
+### 5. iam_instance_profile
 
 ```hcl
 description = "The IAM instance profile name"
@@ -60,7 +60,7 @@ value       = module.iam.iam_instance_profile
 
 ---
 
-### 6. output "iam_role_name"
+### 6. iam_role_name
 
 ```hcl
 description = "The IAM role name"
@@ -72,7 +72,7 @@ value       = module.iam.role_name
 
 ---
 
-### 7. output "s3_bucket_name"
+### 7. s3_bucket_name
 
 ```hcl
 description = "The name of the S3 bucket"
@@ -84,7 +84,7 @@ value       = module.s3.bucket_name
 
 ---
 
-### 8. output "ecr_repo_url"
+### 8. ecr_repo_url
 
 ```hcl
 description = "The ECR repository URL"
