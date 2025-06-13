@@ -6,7 +6,6 @@
 - Passes necessary input variables to those modules.
 - Connects the outputs of one module as inputs to another (e.g., VPC subnet ID to EC2).
 
----
 ## 🔍 Line-by-Line Breakdown
 
 ### 1. AWS Provider Block
