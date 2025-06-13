@@ -221,8 +221,6 @@ pipeline {
 - IAM Role for EC2
 - S3 bucket for storing Terraform state
 - ECR repository for Docker images
-  
-### AWS Resources Outputs
 
 **VPC Output**
 
