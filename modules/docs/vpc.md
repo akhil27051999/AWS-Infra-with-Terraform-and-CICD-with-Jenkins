@@ -79,7 +79,8 @@ variable "subnet_cidr" {}
 variable "availability_zone" {}
 ```
 
-- Declares three input variables:
+Declares three input variables:
+
 1. `vpc_cidr`: The CIDR block for the VPC (e.g., "10.0.0.0/16").
 2. `subnet_cidr`: The CIDR block for the public subnet within the VPC (e.g., "10.0.1.0/24").
 3. `availability_zone`: The AWS availability zone where the subnet will be created (e.g., "us-east-1a").
