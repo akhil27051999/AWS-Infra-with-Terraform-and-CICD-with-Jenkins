@@ -132,17 +132,17 @@ terraform apply      # Apply infrastructure changes
 terraform destroy    # Destroy all created resources
 ```
 
-## Terraform Init Output
+### Terraform Init Output
 ![Screenshot 2025-06-02 170205](https://github.com/user-attachments/assets/abb652b8-7456-4919-bec1-6bb1026e09f4)
 
-## Terraform Plan Outputs
+### Terraform Plan Outputs
 ![Screenshot 2025-06-02 174457](https://github.com/user-attachments/assets/06828399-cbc5-435a-a66a-74d16fe42249)
 ![Screenshot 2025-06-02 174531](https://github.com/user-attachments/assets/9e19d359-f055-4b95-8051-ad3af2faf209)
 ![Screenshot 2025-06-02 174552](https://github.com/user-attachments/assets/741c8bca-2801-41ae-ba97-9ca5d0b4ebc1)
 ![Screenshot 2025-06-02 174612](https://github.com/user-attachments/assets/eb2681f1-ca3c-4078-9489-1092230a18a5)
 ![Screenshot 2025-06-02 174726](https://github.com/user-attachments/assets/e5e1ff3e-89ab-4d2a-b885-8eefa47085d2)
 
-## Terraform Apply Outputs
+### Terraform Apply Outputs
 ![Screenshot 2025-06-02 180933](https://github.com/user-attachments/assets/1ec98ef1-87d1-45a3-9e8e-46ec8a34602e)
 
 ---
