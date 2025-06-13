@@ -10,7 +10,7 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 
 ---
 
-### 🛠 Tech Stack
+### 🛠 Tools Stack
 
 | Tool        | Purpose                              |
 |-------------|--------------------------------------|
