@@ -78,7 +78,7 @@ sudo ./aws/install
 aws configure
 ```
 
-**Provide:**
+Provide:
 1. Access Key ID
 2. Secret Access Key
 3. AWS Region (e.g., us-east-1)
