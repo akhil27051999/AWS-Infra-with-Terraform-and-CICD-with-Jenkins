@@ -94,8 +94,7 @@ Purpose: Create a basic networking environment in AWS including:
 1. A VPC
 2. A public subnet inside the VPC
 3. An internet gateway for outbound internet access
-4. A route table that routes traffic to the internet gateway
-   
+4. A route table that routes traffic to the internet gateway   
    - Association of the public subnet with the route table, making it a public subnet
    - Key outputs: VPC ID and Subnet ID, to use in other modules (e.g., EC2 instances).
    - Variables: Used to parameterize CIDR blocks and availability zone, allowing flexible deployment.
