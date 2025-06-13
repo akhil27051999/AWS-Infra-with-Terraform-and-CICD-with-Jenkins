@@ -9,7 +9,7 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 
 ---
 
-## 📦 Section 1: Tools and Technologies
+## 🛠 Tech Stack
 
 | Tool        | Purpose                              |
 |-------------|--------------------------------------|
@@ -21,45 +21,8 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 
 ---
 
-## 🧱 Section 2: Prerequisites & Setup
-
-### ✅ 2.1 Install Terraform
-```bash
-sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update && sudo apt install terraform
-terraform -v
-```
-
-### ✅ 2.2 Install AWS CLI
-```bash
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-aws configure
-```
-
-**Provide:**
-1. Access Key ID
-2. Secret Access Key
-3. AWS Region (e.g., us-east-1)
-4. Output Format (e.g., json)
-
-### ✅ 2.3 Setup AWS IAM User
-
-`AWS Console → IAM → Users → Create User`
-- Enable Programmatic Access
-- Attach policies:
-
-1. `AmazonEC2FullAccess`
-2. `AmazonS3FullAccess`
-3. `AmazonECRFullAccess`
-   
-- Save Access & Secret Keys
-
 ---
-## 🏗️ Section 3: Project Structure
+## 📁 Project Structure
 ```css
 project-root/
 ├── main.tf
@@ -95,35 +58,74 @@ project-root/
 
 ```
 
----
-## 🔧 Section 4: Terraform Modules Overview
+## Project Section-wise Overview
 
- ### 4.1 VPC Module
+## 🧱 Section 1: Prerequisites & Setup
+
+### ✅ 1.1 Install Terraform
+```bash
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+terraform -v
+```
+
+### ✅ 1.2 Install AWS CLI
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws configure
+```
+
+**Provide:**
+1. Access Key ID
+2. Secret Access Key
+3. AWS Region (e.g., us-east-1)
+4. Output Format (e.g., json)
+
+### ✅ 1.3 Setup AWS IAM User
+
+`AWS Console → IAM → Users → Create User`
+- Enable Programmatic Access
+- Attach policies:
+
+1. `AmazonEC2FullAccess`
+2. `AmazonS3FullAccess`
+3. `AmazonECRFullAccess`
+   
+- Save Access & Secret Keys
+  
+---
+## 🔧 Section 2: Terraform Modules Overview
+
+ ### 2.1 VPC Module
 - Creates VPC, Subnet, Internet Gateway, Route Table
 - Uses variables like CIDR block and Availability Zone
 - Outputs: VPC ID, Subnet ID
 
-### 4.2 EC2 Module
+### 2.2 EC2 Module
 - Provisions EC2 in public subnet
 - Installs Jenkins inside Docker using user_data
 - Opens ports 22 (SSH), 8080 (Jenkins)
 - Outputs: EC2 Instance ID, Public IP
 
-### 4.3 IAM Module
+### 2.3 IAM Module
 - Creates IAM Role for EC2 to access AWS services
 - Attaches AmazonEC2FullAccess policy
 - Output: IAM Role name
 
-### 4.4 S3 Module
+### 2.4 S3 Module
 - Creates version-enabled S3 bucket (e.g., for Terraform backend or artifacts)
 - Output: S3 Bucket name
 
-### 4.5 ECR Module
+### 2.5 ECR Module
 - Creates ECR repository for Docker image storage
 - Output: ECR Repository URI
 
 ---
-## 🛠️ Section 5: Terraform Commands
+## 🛠️ Section 3: Terraform Commands
 ```bash
 terraform init       # Initialize modules and backend
 terraform plan       # Review what changes will be made
@@ -145,7 +147,7 @@ terraform destroy    # Destroy all created resources
 ![Screenshot 2025-06-02 180933](https://github.com/user-attachments/assets/1ec98ef1-87d1-45a3-9e8e-46ec8a34602e)
 
 ---
-## 🚀 Section 6: Jenkins Installation via user_data
+## 🚀 Section 4: Jenkins Installation via user_data
 
 **When the EC2 instance launches, the following script runs automatically:**
 ```bash
@@ -163,7 +165,7 @@ http://<EC2-Public-IP>:8080
 ```
 
 ---
-## 🔄 Section 7: Jenkins CI/CD Pipeline
+## 🔄 Section 5: Jenkins CI/CD Pipeline
 
 ### ✅ Sample Jenkinsfile
 ```groovy
@@ -202,7 +204,7 @@ pipeline {
 ![Screenshot 2025-06-02 225050](https://github.com/user-attachments/assets/efd214fd-ec79-4f10-8f87-133abcecaaa5)
 ---
 
-## 📬 Section 8: Final Output
+## 📬 Section 6: Final Output
 ### ✅ AWS Resources Created:
 
 - VPC with public subnet
