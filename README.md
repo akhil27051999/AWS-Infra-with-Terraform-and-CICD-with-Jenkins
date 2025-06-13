@@ -133,6 +133,7 @@ terraform destroy    # Destroy all created resources
 ```
 
 **Terraform Init Output**
+
 ![Screenshot 2025-06-02 170205](https://github.com/user-attachments/assets/abb652b8-7456-4919-bec1-6bb1026e09f4)
 
 **Terraform Plan Outputs**
