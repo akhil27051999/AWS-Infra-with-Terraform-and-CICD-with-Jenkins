@@ -89,7 +89,7 @@ Declares three input variables:
 
 ### Summary for VPC Module
 
-**Purpose: Create a basic networking environment in AWS including:**
+**Purpose: Create a basic networking environment in AWS including**
 
 1. A VPC
 2. A public subnet inside the VPC
