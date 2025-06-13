@@ -61,7 +61,7 @@ project-root/
 
 ## Section 1: Prerequisites & Setup
 
-### ✅ 1.1 Install Terraform
+### 1.1 Install Terraform
 ```bash
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -70,7 +70,7 @@ sudo apt update && sudo apt install terraform
 terraform -v
 ```
 
-### ✅ 1.2 Install AWS CLI
+### 1.2 Install AWS CLI
 ```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
@@ -84,7 +84,7 @@ aws configure
 3. AWS Region (e.g., us-east-1)
 4. Output Format (e.g., json)
 
-### ✅ 1.3 Setup AWS IAM User
+### 1.3 Setup AWS IAM User
 
 `AWS Console → IAM → Users → Create User`
 - Enable Programmatic Access
@@ -204,6 +204,7 @@ pipeline {
 ---
 
 ## Section 6: Final Output
+
 ### AWS Resources Created:
 
 - VPC with public subnet
@@ -219,7 +220,6 @@ pipeline {
 - Docker images built and pushed to ECR
 
 ---
-# 📊 Project Outputs
 
 ## AWS Resources Outputs
 
