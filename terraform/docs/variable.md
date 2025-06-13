@@ -1,4 +1,4 @@
-# 🔍 Detailed Explanation of Each Variable
+# 🔍 Detailed Explanation of variables.tf file
 
 ### 1. aws_region
 
