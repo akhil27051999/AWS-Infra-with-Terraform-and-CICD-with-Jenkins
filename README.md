@@ -199,7 +199,7 @@ pipeline {
   }
 }
 ```
-
+---
 ### ✅ Section 6: Final Output
 
 **CI/CD Outcome:**
@@ -213,7 +213,6 @@ pipeline {
 ![Screenshot 2025-06-02 225050](https://github.com/user-attachments/assets/efd214fd-ec79-4f10-8f87-133abcecaaa5)
 
 ---
-
 **AWS Resources Outcome:**
 
 - VPC with public subnet
