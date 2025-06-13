@@ -1,4 +1,4 @@
-# AWS Infrastructure using Terraform and CI/CD Pipeline with Jenkins 🏗️
+# AWS Infrastructure using Terraform & CI/CD Pipeline with Jenkins 🏗️
 
 ### 👨‍💻 Project Goal
 
