@@ -202,7 +202,7 @@ pipeline {
 ---
 ### ✅ Section 6: Final Output
 
-**CI/CD Outcome:**
+**➤ CI/CD Outcome:**
 
 - Jenkins running at http://<EC2-Public-IP>:8080
 - CI/CD pipeline triggers on code push to GitHub
@@ -213,7 +213,7 @@ pipeline {
 ![Screenshot 2025-06-02 225050](https://github.com/user-attachments/assets/efd214fd-ec79-4f10-8f87-133abcecaaa5)
 
 
-**AWS Resources Outcome:**
+**➤ AWS Resources Outcome:**
 
 - VPC with public subnet
 - EC2 instance with Jenkins in Docker
