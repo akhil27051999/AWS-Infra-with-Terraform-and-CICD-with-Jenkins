@@ -214,7 +214,7 @@ pipeline {
 
 ---
 
-**AWS Resources Created:**
+**AWS Resources Outcome:**
 
 - VPC with public subnet
 - EC2 instance with Jenkins in Docker
