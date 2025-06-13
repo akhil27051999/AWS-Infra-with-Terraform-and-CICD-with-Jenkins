@@ -10,7 +10,7 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 
 ---
 
-## 🛠 Tech Stack
+### 🛠 Tech Stack
 
 | Tool        | Purpose                              |
 |-------------|--------------------------------------|
@@ -21,7 +21,7 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 | GitHub      | Version Control & Pipeline Trigger   |
 
 ---
-## 📁 Project Structure
+### 📁 Project Structure
 ```css
 project-root/
 ├── main.tf
