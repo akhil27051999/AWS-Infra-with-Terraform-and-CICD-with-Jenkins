@@ -103,5 +103,4 @@ You can store this file:
 ## 📘 Resources
 
 - [Terraform AWS Provider Docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-- [Terraform CLI Docs](https://developer.hashicorp.com/terraform/cli)
-- [Managing State](https://developer.hashicorp.com/terraform/language/state)
+
