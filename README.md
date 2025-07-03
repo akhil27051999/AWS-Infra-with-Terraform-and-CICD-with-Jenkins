@@ -17,7 +17,7 @@ This project follows Infrastructure as Code (IaC) principles to enable reusable,
 | Terraform   | Infrastructure as Code (IaC)         |
 | AWS         | Cloud Provider                       |
 | Jenkins     | CI/CD Automation                     |
-| Docker      | Containerization of Jenkins          |
+| Docker      | Containerization of Sample App          |
 | GitHub      | Version Control & Pipeline Trigger   |
 
 ---
