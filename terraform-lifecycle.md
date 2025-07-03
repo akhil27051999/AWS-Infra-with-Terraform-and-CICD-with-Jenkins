@@ -40,6 +40,9 @@ Terraform must authenticate to AWS to make API calls. You can provide credential
 | IAM Role        | For EC2 or container workloads with attached IAM roles              |
 | Terraform Cloud | Set up environment variables/secrets in workspace settings          |
 
+### 🔐 AWS CLI and Local Credential Storage
+
+When you configure the AWS CLI using `aws configure`, it stores your credentials locally on your machine. These credentials are used by tools like Terraform, AWS CLI, SDKs, and other automation tools to authenticate to your AWS account.
 
 ## ⚙️ Terraform Workflow
 
@@ -71,13 +74,11 @@ You can store this file:
 
 ## 📡 Real Workflow: EC2 Example
 
-```plaintext
 1. You write .tf file defining EC2 instance
 2. Terraform CLI uses your AWS credentials
 3. Terraform sends API request to AWS (EC2 API)
 4. AWS provisions the EC2 instance
 5. Terraform stores EC2 ID and details in terraform.tfstate
-```
 
 
 ## 🔍 FAQs
@@ -89,6 +90,12 @@ You can store this file:
 | Where does Terraform remember what it created? | In the `terraform.tfstate` file |
 | What happens if I lose my state file? | Terraform forgets everything it managed — use remote backends! |
 
+| Question                                 | Answer                          |
+|------------------------------------------|----------------------------------|
+| Does AWS CLI store credentials locally?  | ✅ Yes                          |
+| Where does it store them?                | `~/.aws/credentials` file       |
+| Who reads these credentials?             | CLI, Terraform, SDKs, etc.      |
+| Is it secure?                            | Only if you manage file access  |
 
 
 ## ✅ Summary
