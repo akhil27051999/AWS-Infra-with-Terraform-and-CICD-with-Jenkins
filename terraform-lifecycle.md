@@ -40,7 +40,7 @@ Terraform must authenticate to AWS to make API calls. You can provide credential
 | IAM Role        | For EC2 or container workloads with attached IAM roles              |
 | Terraform Cloud | Set up environment variables/secrets in workspace settings          |
 
-### 🔐 AWS CLI and Local Credential Storage
+## 🔐 AWS CLI and Local Credential Storage
 
 When you configure the AWS CLI using `aws configure`, it stores your credentials locally on your machine. These credentials are used directly form local by tools like Terraform, AWS CLI, SDKs, and other automation tools to authenticate to your AWS account.
 
