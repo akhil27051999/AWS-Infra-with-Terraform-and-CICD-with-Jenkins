@@ -90,13 +90,6 @@ You can store this file:
 | Where does Terraform remember what it created? | In the `terraform.tfstate` file |
 | What happens if I lose my state file? | Terraform forgets everything it managed — use remote backends! |
 
-| Question                                 | Answer                          |
-|------------------------------------------|----------------------------------|
-| Does AWS CLI store credentials locally?  | ✅ Yes                          |
-| Where does it store them?                | `~/.aws/credentials` file       |
-| Who reads these credentials?             | CLI, Terraform, SDKs, etc.      |
-| Is it secure?                            | Only if you manage file access  |
-
 
 ## ✅ Summary
 
